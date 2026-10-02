@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McCup | Silly campus competitions, Nov 15 at McGill</title>
+<meta name="description" content="McCup: a day of ridiculous team challenges on McGill's campus, Nov 15. Play or watch. Organized by BUSA 303.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E4002B;--deep:#9B0020;--white:#fff;--blush:#FFE9EC;--ink:#2A0A10;
+--display:"Bowlby One",Impact,"Arial Black",sans-serif;--body:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.6 var(--body);color:var(--ink);background:var(--white)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1}
+h2{font-size:clamp(2rem,6vw,3.5rem);margin-bottom:1.5rem}
+section{padding:4.5rem 0}
+.btn{display:inline-block;font:700 1.1rem var(--body);padding:.9rem 1.8rem;border-radius:999px;background:var(--white);color:var(--red);text-decoration:none;border:3px solid var(--white);transition:transform .15s}
+.btn:hover{transform:rotate(-2deg) scale(1.04)}
+.btn.red{background:var(--red);color:var(--white);border-color:var(--red)}
+.btn.ghost{background:transparent;color:var(--white)}
+/* hero */
+.hero{background:var(--red);color:var(--white);padding:2rem 0 0;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700}
+.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+.top a{text-decoration:none}.top a:hover{text-decoration:underline}
+.hero h1{font-size:clamp(5.5rem,26vw,17rem);letter-spacing:-.03em;margin:3rem 0 0 -.04em;transform:rotate(-3deg);transform-origin:left bottom;animation:drop .7s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes drop{from{transform:translateY(-60px) rotate(-12deg);opacity:0}}
+.tm{font:700 1.5rem var(--body);vertical-align:top;margin-left:.2em}
+.hero .tag{font:700 clamp(1.4rem,4vw,2.4rem)/1.15 var(--body);max-width:20ch;margin:1.25rem 0 1rem}
+.meta{font-size:1.15rem;margin-bottom:2rem}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap;padding-bottom:3rem}
+.strip{background:var(--white);color:var(--red);border-block:4px solid var(--ink);overflow:hidden;white-space:nowrap;font:400 1.6rem var(--display);padding:.7rem 0}
+.strip span{display:inline-block;animation:slide 28s linear infinite;padding-left:100%}
+@keyframes slide{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.hero h1{animation:none}.strip span{animation:none;padding:0}.btn{transition:none}}
+/* about */
+.about{display:grid;gap:2rem;grid-template-columns:1.3fr 1fr;align-items:start}
+.about p+p{margin-top:1rem}
+.chill{background:var(--blush);border:3px solid var(--red);border-radius:1.5rem;padding:1.5rem;transform:rotate(1.5deg)}
+.chill h3{font-size:1.6rem;color:var(--red);margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chips span{border:3px solid var(--red);border-radius:999px;padding:.35rem 1rem;font-weight:700;background:var(--white)}
+.chips span:nth-child(3n+1){background:var(--red);color:var(--white)}
+/* agenda */
+.alt{background:var(--blush)}
+.agenda{list-style:none;padding:0;border-top:3px solid var(--red)}
+.agenda li{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:3px solid var(--red)}
+.agenda b{font:400 1.3rem var(--display);color:var(--red)}
+.note{margin-top:1.25rem;font-size:.95rem;opacity:.8}
+/* people */
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{border:3px solid var(--red);border-radius:1.25rem;padding:1.25rem;background:var(--white)}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font:400 1.6rem var(--display);margin-bottom:.8rem}
+.card h3{font-size:1.15rem;margin-bottom:.3rem}.card p{font-size:.95rem}
+.tbd{border-style:dashed}
+/* sponsors */
+.sponsors{background:var(--red);color:var(--white)}
+.logos{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.logo{font:400 1.8rem var(--display);padding:1rem 1.6rem;border:3px solid var(--white);border-radius:1rem}
+.ask{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:2rem}
+.ask div{background:var(--white);color:var(--ink);border-radius:1.25rem;padding:1.25rem}
+.ask h3{color:var(--red);font-size:1.2rem;margin-bottom:.4rem}
+/* faq */
+details{border-bottom:3px solid var(--red);padding:1rem 0}
+summary{font:700 1.15rem var(--body);cursor:pointer}
+details p{margin-top:.6rem;max-width:62ch}
+footer{background:var(--ink);color:var(--white);padding:2.5rem 0;text-align:center}
+footer .big{font:400 2rem var(--display);color:var(--red);margin-bottom:.4rem}
+@media (max-width:720px){.about{grid-template-columns:1fr}.agenda li{grid-template-columns:1fr;gap:.2rem}.top nav{display:none}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+ <div class="wrap">
+  <div class="top"><span>BUSA 303 · McGill</span>
+   <nav aria-label="Main"><a href="#about">About</a><a href="#format">How it works</a><a href="#challenges">Challenges</a><a href="#agenda">Schedule</a><a href="#judges">Judges</a><a href="#sponsors">Sponsors</a><a href="#faq">FAQ</a></nav></div>
+  <h1>McCup<span class="tm">™</span></h1>
+  <p class="tag">Silly games. Real school spirit.</p>
+  <p class="meta"><strong>Saturday, Nov 15</strong> at McGill. Lower Field, indoors if the weather turns.</p>
+  <div class="cta"><a class="btn rsvp" href="#">RSVP to play or watch</a><a class="btn ghost" href="#sponsors">Sponsor McCup</a></div>
+ </div>
+ <div class="strip" aria-hidden="true"><span>Team challenges &nbsp;★&nbsp; Chill zone &nbsp;★&nbsp; Free to watch &nbsp;★&nbsp; Bring your friends &nbsp;★&nbsp; Team challenges &nbsp;★&nbsp; Chill zone &nbsp;★&nbsp; Free to watch &nbsp;★&nbsp; Bring your friends</span></div>
+</header>
+
+<main>
+<section id="about"><div class="wrap about">
+ <div><h2>One day. Ridiculous challenges.</h2>
+  <p>McCup is a series of silly competitions that bring McGill students together. Teams go head to head in a lineup of challenges, and anyone can join a team or just cheer from the sidelines. No skill required, and it's a good break from midterm stress.</p>
+  <p>Our goal is a memorable day and a stronger campus community. It's run by students in BUSA 303 as our class's catalytic event.</p></div>
+ <aside class="chill"><h3>The Chill Zone</h3><p>Grab food and drinks, watch the action, or hang out with friends. Proceeds go to charity or help us break even.</p></aside>
+</div></section>
+
+<section id="format" class="alt"><div class="wrap">
+ <h2>How it works</h2>
+ <div class="grid">
+  <div class="card"><h3>Teams of 4 to 6</h3><p>Sign up ahead of time with a team name. Registration closes 2 weeks before the event.</p></div>
+  <div class="card"><h3>Points on every challenge</h3><p>Pick your challenges and see how many you can take on. A live leaderboard runs on a big screen all day.</p></div>
+  <div class="card"><h3>Spirit points</h3><p>Earn bonus points for costumes, team chants, and bringing the most spectators.</p></div>
+  <div class="card"><h3>One McCup winner</h3><p>The top team takes the cup at the end of the day.</p></div>
+ </div>
+</div></section>
+
+<section id="challenges"><div class="wrap">
+ <h2>Challenges we're cooking up</h2>
+ <div class="chips">
+  <span>Tug of war</span><span>Human bowling</span><span>Watermelon eating</span><span>Lemon face-off</span><span>Apple bobbing</span><span>Chubby Bunny</span><span>Three-legged race</span><span>Giant Jenga</span><span>Sumo suit wrestling</span><span>Inflatable mechanical bull</span><span>Snowman relay</span><span>Snowball bullseye</span><span>Human curling</span><span>Sled race</span><span>Dodgeball</span><span>Capture the flag</span><span>Campus scavenger hunt</span><span>Hot sauce ladder</span>
+ </div>
+ <p class="note">Brainstorm list. The final lineup will be announced closer to the date, and some challenges will be optional.</p>
+</div></section>
+
+<section id="agenda" class="alt"><div class="wrap">
+ <h2>Schedule</h2>
+ <ol class="agenda">
+  <li><b>Time TBD</b><span>Check-in and team sign-in</span></li>
+  <li><b>Time TBD</b><span>Opening ceremony and first challenges</span></li>
+  <li><b>All day</b><span>Challenge rounds with a live leaderboard, plus a DJ or student band between rounds</span></li>
+  <li><b>All day</b><span>Chill Zone with food, drinks, hot chocolate, and a photobooth</span></li>
+  <li><b>Time TBD</b><span>Final results and the McCup trophy</span></li>
+  <li><b>Evening</b><span>Closing bonfire (pending city permit)</span></li>
+ </ol>
+ <p class="note">Draft schedule. Exact times will be posted here before the event.</p>
+</div></section>
+
+<section id="judges"><div class="wrap">
+ <h2>Judges and guests</h2>
+ <div class="grid">
+  <div class="card tbd"><div class="avatar">?</div><h3>Judge to be announced</h3><p>Name, title, and a one-line bio go here.</p></div>
+  <div class="card tbd"><div class="avatar">?</div><h3>Judge to be announced</h3><p>Name, title, and a one-line bio go here.</p></div>
+  <div class="card tbd"><div class="avatar">?</div><h3>Guest to be announced</h3><p>Name, title, and a one-line bio go here.</p></div>
+ </div>
+</div></section>
+
+<section id="team" class="alt"><div class="wrap">
+ <h2>Meet the organizers</h2>
+ <p style="margin-bottom:1.5rem">We're the students of BUSA 303 at McGill.</p>
+ <div class="grid">
+  <div class="card"><div class="avatar">M</div><h3>Marketing and social media</h3><p>Instagram, photobooth, bilingual promo. Add names here.</p></div>
+  <div class="card"><div class="avatar">S</div><h3>Sponsorship outreach</h3><p>Food, drinks, and prizes. Add names here.</p></div>
+  <div class="card"><div class="avatar">E</div><h3>Events and logistics</h3><p>Challenges, permits, volunteers. Add names here.</p></div>
+  <div class="card"><div class="avatar">F</div><h3>Finance</h3><p>Budget and Chill Zone proceeds. Add names here.</p></div>
+ </div>
+</div></section>
+
+<section id="sponsors" class="sponsors"><div class="wrap">
+ <h2>Sponsors and partners</h2>
+ <div class="logos"><div class="logo">Poppi</div><div class="logo">Celsius</div><div class="logo">BeaverTails (Queues de Castor)</div></div>
+ <h3 style="font-size:1.8rem;margin-bottom:1rem">Want to sponsor McCup?</h3>
+ <div class="ask">
+  <div><h3>Food and drinks</h3><p>Stock the Chill Zone and get your brand in front of hundreds of students.</p></div>
+  <div><h3>Prizes and swag</h3><p>Give winners something to celebrate with, plus a shout-out on the day.</p></div>
+  <div><h3>Funding</h3><p>Help cover supplies and equipment. Your name goes on the event signage.</p></div>
+ </div>
+ <a class="btn" href="mailto:CONTACT_EMAIL@mail.mcgill.ca?subject=McCup%20sponsorship">Email us about sponsoring</a>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <h2>FAQ</h2>
+ <details><summary>Who can play?</summary><p>Anyone. No skill required. Teams are 4 to 6 people and sign up in advance with a team name.</p></details>
+ <details><summary>When is the sign-up deadline?</summary><p>Two weeks before the event, so around Nov 1. Final date to be confirmed.</p></details>
+ <details><summary>Will there be a bonfire?</summary><p>We're planning a closing bonfire, but it depends on getting a city permit.</p></details>
+ <details><summary>Can I help run McCup next year?</summary><p>Yes. Check the box on the sign-up form to join next year's organizing team.</p></details>
+ <details><summary>Does it cost anything?</summary><p>Details to be confirmed. Watching is meant to be free.</p></details>
+ <details><summary>What if it rains?</summary><p>The event moves indoors or adjusts to the weather. We'll post updates here and on social media.</p></details>
+ <details><summary>Where exactly is it?</summary><p>Lower Field at McGill, with an indoor or rink backup. We'll confirm the final location before Nov 15.</p></details>
+ <details><summary>Where does Chill Zone money go?</summary><p>To charity or toward breaking even on event costs.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="big">McCup™</div><p>A BUSA 303 event at McGill University · Nov 15</p>
+<p style="margin-top:1rem"><a class="btn rsvp" href="#">RSVP now</a></p></div></footer>
+
+<script>
+// Paste your sign-up link (Google Form, Luma, Eventbrite) between the quotes:
+const RSVP_URL = "";
+document.querySelectorAll(".rsvp").forEach(a=>{
+  if(RSVP_URL){a.href=RSVP_URL;a.target="_blank";a.rel="noopener"}
+  else{a.textContent="RSVP link coming soon";a.addEventListener("click",e=>e.preventDefault())}
+});
+</script>
+</body>
+</html>
